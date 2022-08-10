@@ -1,0 +1,130 @@
+MAVEN:--> IT IS A BUILD AUTOMATION TOOL USED FOR JAVA PROJECTS
+      --> IT IS HOSTED BY APACHE SOFTWARE FOUNDATION.
+      --> COMPILING SOURCE CODE
+      --> PACKING BINARIES
+      --> RUNNING AUTOMATED TESTS
+      --> DEPLOYING PRODUCTION SYSTEM
+      --> CREATE DOCUMENTATION
+
+  **** GRADLE  IS ALTERNATE TOOL FOR MAVEN ****
+
+DIFF  WITH OTHER TOOLS:---
+ --> OPEN SOURCE
+ --> USED NOT ONLY FOR BUILD AND ALSO PROJECT MANAGEMENT TOOL.
+ --> DEFINE PROJECT LIFESTYLE
+ --> DEPENDENCY MANAGEMENT
+ --> 
+  ((  YUM INSTALL MAVEN -Y   ))
+   ((  MVN -VERSION   ))
+ 
+ARCHITECTURE:---
+ 
+     POM.XML = PROJECT OBJECT MODEL
+    
+                BUILD SYSTEM
+                +++++++++++
+                +         +
+                + POM.XML +(HTTP)
+LOCAL REPO <----+ (GOALS) +----->CENTRAL REP
+                +  MAVEN  +
+                +++++++++++
+           
+-->IT WORKS AS A GOALS INTERNALLY GOALS ARE PLUGIN/JAR FILES WHICH HAS FURTHUR OF WHEN AND WHAT IT HAS TO DO.
+ 
+  EX:: MAVEN DO TESTING THEN IT CALL PLUGINS TO DO  PLUGINS
+
+DEFAULT LIFECYCLE:---
+
+** GENERATE RESOURCE >> SOURCE CODE
+** COMPILE -->> ALL JAVA FILES INTO .CLASS FILES
+** TEST--> UINT TEST
+** PACKAGE --> DELIVERABLE OR EXECUTABLE OR ARTIFACTS
+** INTEGRITY --> TEST (PRE AND POST)
+** INSTALL
+** DEPLOY
+
+CLEAN : IT DELETE ALL RUNTIME FILES
+ ITE : DOCUMENTATION (99% WE CAN NOT USE, VERY RARE CASE)
+
+STANDARD DIRECTORY LAYOUT:---
+ 
+--> IF U WANT TO WORK WITH MAVEN PROJECT THEN WE NEED TO  FOLLOW STANDARD DIRECTORY STRUCTURE THROUGH WHICH MAVEN WILL WORK.
+ 
+ MAVEN = SOURCE CODE, ADD INTO, PROP FILES ETC
+ TEST = UNIT TESTING FILES
+ONCE YOU START COMPILE ,MAVEN WILL GO  MAIN FOLDER TO COMPILE
+
+GAV:-- HOW MAVEN IDENTIFY WHICH PLUGIN OR PROJECT TO SELECT WHEN INSTRUCT A GOAL 
+GAV ..... G: GROUP ID    = COMPANY NAME/GRP/BUSINESS ORG
+          A: ARTIFACT ID = PRODUCT OR DELIVERY (FINAL O/P)
+          V: VERSION ID  = MAJOR| MINOR| PATCH | MAINTENANCE 
+EX:: 1.2.0 ,1.3.0 ,2.0.0
+
+PACKAGING :--- BUILD TYPE IDENTIFIED USING THE PACKING ELEMENT.
+ 
+JAR: JAVA ARCHIVE (DEFAULT PACKAGE MAVEN)
+ IT CONSIST .CLASS FILES
+
+WAR: WEB ARCHIVE (jar+config+xmL)
+ear: enterprice application 
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*mvn archetype :generate
+  to generate a project in interaction mode
+groupid :
+prtifactid :
+version 
+package 
+enter
+
+*ls demo (artificial id)= cd demo
+*mvn compile = to compile the code
+*mvn test = to test the code 
+*mvn package = to deliver (jar file is created here)
+*mvn clean = to delete target file
+
+pom(config files)
+
+*project object model is fundamental unit at work in maven .
+*It is an Xml file contains info about project and config details used by maven to build project.
+
+a)describe a project
+b)Name and version , artifact type, source code location , dependencies
+c)plugins
+d)profiles(alternate build config)
+e)it uses XML by default.
+
+Maven Things to do :
+1. How to identify plugin 
+2. How to run plugin
+3. What things it has to perform
+4. What exactely we need to do 
+
+POM Syntax :
+< project >
+   < build >
+      < plugins >
+	 < plugin >
+  	     < groupid > demo </>
+	     <Artifact id > Morning </>    
+             <Version id > 2.0.0 </>
+<executions>
+    <execution>
+       <phase> clean </>                   
+     <execution>
+<executions><goals>
+            <goal> run </goal>             
+            </goals>
+           <configurations>
+          <tasks>
+             <echo> Hello </echo>          
+          <tasks>
+       </configurations>
+      </execution>
+      </plugin>
+      </plugins>
+    </build>
+   </project>
+

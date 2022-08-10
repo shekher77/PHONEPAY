@@ -1,0 +1,12 @@
+sudo find / -name git
+select /usr/bin/git
+manage jenkins -- > global tool configuration
+
+Path to Git executable :  /usr/bin/git
+now save it
+select the project -- > configure -- > give the git url in both locations
+
+build triggers -- > Trigger builds remotely -- > Authentication Token : raham1 -- > 
+COPY THIS : JENKINS_URL/job/project-2/build?token=TOKEN_NAME 
+save now
+http://3.91.222.230:8080/jenkins_url/job/project-2/build?token=raham1
